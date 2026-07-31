@@ -1,0 +1,536 @@
+[
+  {
+    "name": "01_hero_exterior_day.jpg",
+    "category": "01_arrival_exterior",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/01_arrival_exterior/01_hero_exterior_day.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/01_arrival_exterior/01_hero_exterior_day-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/01_arrival_exterior/01_hero_exterior_day-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/01_arrival_exterior/01_hero_exterior_day-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "02_property_sign_arrival.jpg",
+    "category": "01_arrival_exterior",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/01_arrival_exterior/02_property_sign_arrival.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/01_arrival_exterior/02_property_sign_arrival-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/01_arrival_exterior/02_property_sign_arrival-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/01_arrival_exterior/02_property_sign_arrival-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "03_garden_gate_reveal.jpg",
+    "category": "01_arrival_exterior",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/01_arrival_exterior/03_garden_gate_reveal.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/01_arrival_exterior/03_garden_gate_reveal-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/01_arrival_exterior/03_garden_gate_reveal-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/01_arrival_exterior/03_garden_gate_reveal-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "04_gated_parking.jpg",
+    "category": "01_arrival_exterior",
+    "width": 1280,
+    "height": 960,
+    "original": "/assets/images/original/01_arrival_exterior/04_gated_parking.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "path": "/assets/images/webp/01_arrival_exterior/04_gated_parking-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "path": "/assets/images/webp/01_arrival_exterior/04_gated_parking-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "path": "/assets/images/webp/01_arrival_exterior/04_gated_parking-960.webp"
+      },
+      {
+        "width": 1280,
+        "height": 960,
+        "path": "/assets/images/webp/01_arrival_exterior/04_gated_parking-1280.webp"
+      }
+    ]
+  },
+  {
+    "name": "05_front_porch_entry.jpg",
+    "category": "01_arrival_exterior",
+    "width": 1280,
+    "height": 960,
+    "original": "/assets/images/original/01_arrival_exterior/05_front_porch_entry.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "path": "/assets/images/webp/01_arrival_exterior/05_front_porch_entry-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "path": "/assets/images/webp/01_arrival_exterior/05_front_porch_entry-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "path": "/assets/images/webp/01_arrival_exterior/05_front_porch_entry-960.webp"
+      },
+      {
+        "width": 1280,
+        "height": 960,
+        "path": "/assets/images/webp/01_arrival_exterior/05_front_porch_entry-1280.webp"
+      }
+    ]
+  },
+  {
+    "name": "06_exterior_night_ambience.jpg",
+    "category": "01_arrival_exterior",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/01_arrival_exterior/06_exterior_night_ambience.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/01_arrival_exterior/06_exterior_night_ambience-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/01_arrival_exterior/06_exterior_night_ambience-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/01_arrival_exterior/06_exterior_night_ambience-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "07_balcony_tropical_view.jpg",
+    "category": "02_tropical_setting",
+    "width": 720,
+    "height": 540,
+    "original": "/assets/images/original/02_tropical_setting/07_balcony_tropical_view.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "path": "/assets/images/webp/02_tropical_setting/07_balcony_tropical_view-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "path": "/assets/images/webp/02_tropical_setting/07_balcony_tropical_view-720.webp"
+      }
+    ]
+  },
+  {
+    "name": "08_green_garden_outlook.jpg",
+    "category": "02_tropical_setting",
+    "width": 720,
+    "height": 960,
+    "original": "/assets/images/original/02_tropical_setting/08_green_garden_outlook.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/02_tropical_setting/08_green_garden_outlook-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/02_tropical_setting/08_green_garden_outlook-720.webp"
+      }
+    ]
+  },
+  {
+    "name": "09_living_dining_overview.jpg",
+    "category": "03_shared_spaces",
+    "width": 720,
+    "height": 960,
+    "original": "/assets/images/original/03_shared_spaces/09_living_dining_overview.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/03_shared_spaces/09_living_dining_overview-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/03_shared_spaces/09_living_dining_overview-720.webp"
+      }
+    ]
+  },
+  {
+    "name": "10_staircase_living_flow.jpg",
+    "category": "03_shared_spaces",
+    "width": 720,
+    "height": 960,
+    "original": "/assets/images/original/03_shared_spaces/10_staircase_living_flow.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/03_shared_spaces/10_staircase_living_flow-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/03_shared_spaces/10_staircase_living_flow-720.webp"
+      }
+    ]
+  },
+  {
+    "name": "11_double_height_stair_detail.jpg",
+    "category": "03_shared_spaces",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/03_shared_spaces/11_double_height_stair_detail.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/03_shared_spaces/11_double_height_stair_detail-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/03_shared_spaces/11_double_height_stair_detail-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/03_shared_spaces/11_double_height_stair_detail-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "12_upper_landing_high_resolution.jpg",
+    "category": "03_shared_spaces",
+    "width": 3024,
+    "height": 4032,
+    "original": "/assets/images/original/03_shared_spaces/12_upper_landing_high_resolution.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/03_shared_spaces/12_upper_landing_high_resolution-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/03_shared_spaces/12_upper_landing_high_resolution-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/03_shared_spaces/12_upper_landing_high_resolution-960.webp"
+      },
+      {
+        "width": 1280,
+        "height": 1707,
+        "path": "/assets/images/webp/03_shared_spaces/12_upper_landing_high_resolution-1280.webp"
+      },
+      {
+        "width": 1600,
+        "height": 2133,
+        "path": "/assets/images/webp/03_shared_spaces/12_upper_landing_high_resolution-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 2667,
+        "path": "/assets/images/webp/03_shared_spaces/12_upper_landing_high_resolution-2000.webp"
+      },
+      {
+        "width": 3024,
+        "height": 4032,
+        "path": "/assets/images/webp/03_shared_spaces/12_upper_landing_high_resolution-3024.webp"
+      }
+    ]
+  },
+  {
+    "name": "13_upper_workspace_lounge.jpg",
+    "category": "03_shared_spaces",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/03_shared_spaces/13_upper_workspace_lounge.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/03_shared_spaces/13_upper_workspace_lounge-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/03_shared_spaces/13_upper_workspace_lounge-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/03_shared_spaces/13_upper_workspace_lounge-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "14_full_kitchen_wide.jpg",
+    "category": "04_kitchen_amenities",
+    "width": 1280,
+    "height": 960,
+    "original": "/assets/images/original/04_kitchen_amenities/14_full_kitchen_wide.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "path": "/assets/images/webp/04_kitchen_amenities/14_full_kitchen_wide-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "path": "/assets/images/webp/04_kitchen_amenities/14_full_kitchen_wide-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "path": "/assets/images/webp/04_kitchen_amenities/14_full_kitchen_wide-960.webp"
+      },
+      {
+        "width": 1280,
+        "height": 960,
+        "path": "/assets/images/webp/04_kitchen_amenities/14_full_kitchen_wide-1280.webp"
+      }
+    ]
+  },
+  {
+    "name": "15_kitchen_laundry_appliances.jpg",
+    "category": "04_kitchen_amenities",
+    "width": 720,
+    "height": 960,
+    "original": "/assets/images/original/04_kitchen_amenities/15_kitchen_laundry_appliances.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/04_kitchen_amenities/15_kitchen_laundry_appliances-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/04_kitchen_amenities/15_kitchen_laundry_appliances-720.webp"
+      }
+    ]
+  },
+  {
+    "name": "16_bedroom_1_master_high_resolution.jpg",
+    "category": "05_bedrooms_bath",
+    "width": 3024,
+    "height": 4032,
+    "original": "/assets/images/original/05_bedrooms_bath/16_bedroom_1_master_high_resolution.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/05_bedrooms_bath/16_bedroom_1_master_high_resolution-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/05_bedrooms_bath/16_bedroom_1_master_high_resolution-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/05_bedrooms_bath/16_bedroom_1_master_high_resolution-960.webp"
+      },
+      {
+        "width": 1280,
+        "height": 1707,
+        "path": "/assets/images/webp/05_bedrooms_bath/16_bedroom_1_master_high_resolution-1280.webp"
+      },
+      {
+        "width": 1600,
+        "height": 2133,
+        "path": "/assets/images/webp/05_bedrooms_bath/16_bedroom_1_master_high_resolution-1600.webp"
+      },
+      {
+        "width": 2000,
+        "height": 2667,
+        "path": "/assets/images/webp/05_bedrooms_bath/16_bedroom_1_master_high_resolution-2000.webp"
+      },
+      {
+        "width": 3024,
+        "height": 4032,
+        "path": "/assets/images/webp/05_bedrooms_bath/16_bedroom_1_master_high_resolution-3024.webp"
+      }
+    ]
+  },
+  {
+    "name": "17_bedroom_2_air_conditioned.jpg",
+    "category": "05_bedrooms_bath",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/05_bedrooms_bath/17_bedroom_2_air_conditioned.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/05_bedrooms_bath/17_bedroom_2_air_conditioned-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/05_bedrooms_bath/17_bedroom_2_air_conditioned-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/05_bedrooms_bath/17_bedroom_2_air_conditioned-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "18_bedroom_3_wide.jpg",
+    "category": "05_bedrooms_bath",
+    "width": 1280,
+    "height": 960,
+    "original": "/assets/images/original/05_bedrooms_bath/18_bedroom_3_wide.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "path": "/assets/images/webp/05_bedrooms_bath/18_bedroom_3_wide-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "path": "/assets/images/webp/05_bedrooms_bath/18_bedroom_3_wide-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "path": "/assets/images/webp/05_bedrooms_bath/18_bedroom_3_wide-960.webp"
+      },
+      {
+        "width": 1280,
+        "height": 960,
+        "path": "/assets/images/webp/05_bedrooms_bath/18_bedroom_3_wide-1280.webp"
+      }
+    ]
+  },
+  {
+    "name": "19_bedroom_4_four_poster.jpg",
+    "category": "05_bedrooms_bath",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/05_bedrooms_bath/19_bedroom_4_four_poster.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/05_bedrooms_bath/19_bedroom_4_four_poster-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/05_bedrooms_bath/19_bedroom_4_four_poster-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/05_bedrooms_bath/19_bedroom_4_four_poster-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "20_bedroom_5_white_linen.jpg",
+    "category": "05_bedrooms_bath",
+    "width": 960,
+    "height": 1280,
+    "original": "/assets/images/original/05_bedrooms_bath/20_bedroom_5_white_linen.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/05_bedrooms_bath/20_bedroom_5_white_linen-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/05_bedrooms_bath/20_bedroom_5_white_linen-720.webp"
+      },
+      {
+        "width": 960,
+        "height": 1280,
+        "path": "/assets/images/webp/05_bedrooms_bath/20_bedroom_5_white_linen-960.webp"
+      }
+    ]
+  },
+  {
+    "name": "21_bathroom_hot_water_shower.jpg",
+    "category": "05_bedrooms_bath",
+    "width": 720,
+    "height": 960,
+    "original": "/assets/images/original/05_bedrooms_bath/21_bathroom_hot_water_shower.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 640,
+        "path": "/assets/images/webp/05_bedrooms_bath/21_bathroom_hot_water_shower-480.webp"
+      },
+      {
+        "width": 720,
+        "height": 960,
+        "path": "/assets/images/webp/05_bedrooms_bath/21_bathroom_hot_water_shower-720.webp"
+      }
+    ]
+  }
+]
