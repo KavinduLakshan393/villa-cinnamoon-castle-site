@@ -1,0 +1,31 @@
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
+import { metadataBase } from "@/lib/site-metadata";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { MobileCta } from "@/components/MobileCta";
+import { MotionController } from "@/components/MotionController";
+import "../../public/assets/css/styles.css";
+
+export const metadata: Metadata = {
+  metadataBase,
+  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }] },
+  manifest: "/site.webmanifest"
+};
+
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#173225" };
+
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  return (
+    <html lang="en" className="js">
+      <body>
+        <a className="skip-link" href="#main">Skip to content</a>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+        <MobileCta />
+        <MotionController />
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/PageHero";
+import { pageMetadata } from "@/lib/site-metadata";
+
+export const metadata: Metadata = pageMetadata("Terms | Villa Cinnamoon Castle", "Website terms for the Villa Cinnamoon Castle inquiry-focused accommodation website.", "/terms/");
+
+export default function TermsPage() {
+  return <main id="main"><PageHero breadcrumb="Terms" eyebrow="Website terms" title="Clear expectations." lede="This website presents the property and accepts inquiries; it does not create a booking by itself." /><section className="section section--paper"><div className="container container--narrow"><div className="prose"><h2>Property information</h2><p>The site describes Villa Cinnamoon Castle as an entire home near Hikkaduwa for up to ten guests, with five bedrooms, five beds and two bathrooms. Content should be reviewed by the owner before launch.</p><h2>Inquiry status</h2><p>Submitting a form does not reserve the property, guarantee availability or fix a price. A booking exists only after the host confirms the relevant terms.</p><h2>Photography</h2><p>The photographs are authentic project-supplied images of the villa. Crops and responsive derivatives preserve the photographed content. Publication rights must be confirmed by the owner before production use.</p><h2>Accuracy limits</h2><p>Rates, availability, policies, check-in times, exact directions, transport details and alarm status are not published unless approved. Visitors should ask the host for current information.</p><h2>Acceptable use</h2><p>Do not misuse the inquiry form, attempt to interfere with the server or submit unlawful or deceptive content.</p><div className="notice">These terms are a project draft, not jurisdiction-specific legal advice. They require owner or legal review before launch.</div></div></div></section></main>;
+}
