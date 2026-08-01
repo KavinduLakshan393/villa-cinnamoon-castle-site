@@ -2,11 +2,11 @@
 
 ## Architecture
 
-The site uses static, server-readable HTML and a dependency-free Node 20 server. This keeps core property facts indexable and accessible even when motion scripts do not run.
+The site uses React 19, TypeScript, and the Next.js App Router. Core property routes are statically prerendered, while inquiry and health endpoints run on the Node.js server runtime. Property facts remain indexable and outside the interactive client layer.
 
 ## Motion
 
-`public/assets/js/main.js` applies low-amplitude transforms only to visible elements marked with `data-parallax`. It respects `prefers-reduced-motion`, never hijacks scrolling, and does not hide content.
+`src/components/MotionController.tsx` applies the reference site’s low-amplitude transforms only to visible elements marked with `data-parallax`. It respects `prefers-reduced-motion`, never hijacks scrolling, and leaves the document in its normal reading order.
 
 ## Images
 
@@ -18,7 +18,7 @@ The site uses static, server-readable HTML and a dependency-free Node 20 server.
 
 ## Inquiry endpoint
 
-`POST /api/inquiries` accepts JSON and enforces:
+The Next.js route handler at `POST /api/inquiries` accepts JSON and enforces:
 
 - Required name.
 - At least one contact method.
@@ -34,4 +34,4 @@ A production deployment should add durable distributed rate limiting and an appr
 
 ## Deployment
 
-The Node server can run on any host that supports Node 20 and persistent writable storage. On serverless or read-only platforms, replace the NDJSON persistence with an approved database or webhook-only workflow.
+The production server can run on any host that supports Node 20 and persistent writable storage. On serverless or read-only platforms, replace the NDJSON persistence with an approved database or webhook-only workflow.
