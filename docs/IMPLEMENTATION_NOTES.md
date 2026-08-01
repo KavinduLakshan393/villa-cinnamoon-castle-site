@@ -8,6 +8,12 @@ The site uses React 19, TypeScript, and the Next.js App Router. Core property ro
 
 `src/components/MotionController.tsx` applies the reference site’s low-amplitude transforms only to visible elements marked with `data-parallax`. It respects `prefers-reduced-motion`, never hijacks scrolling, and leaves the document in its normal reading order.
 
+The homepage adds a progressively enhanced cinematic hero, clipped image reveals, an editorial room sequence, and two-depth photographic chapters. Hero autoplay pauses during pointer or keyboard interaction and is disabled for reduced-motion users. Content remains visible when the motion controller does not initialize.
+
+## Typography
+
+Playfair Display Variable is used for editorial headings and Open Sans Variable is used for body copy, navigation, forms, and controls. Both fonts are packaged through Fontsource and served from the application bundle; the Latin variable files keep the initial font transfer within the documented budget.
+
 ## Images
 
 - Untouched supplied originals live in `public/assets/images/original/`.

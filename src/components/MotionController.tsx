@@ -9,6 +9,7 @@ export function MotionController() {
   const pathname = usePathname();
 
   useEffect(() => {
+    document.documentElement.classList.add("motion-ready");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const parallaxItems = [...document.querySelectorAll<ParallaxElement>("[data-parallax]")];
     let frame = 0;
@@ -39,6 +40,11 @@ export function MotionController() {
     }
 
     const revealItems = [...document.querySelectorAll<HTMLElement>(".reveal")];
+    revealItems.forEach((item) => {
+      const requestedDelay = Number(item.dataset.revealDelay || 0);
+      const delay = Math.max(0, Math.min(480, Number.isFinite(requestedDelay) ? requestedDelay : 0));
+      item.style.setProperty("--reveal-delay", `${delay}ms`);
+    });
     let revealObserver: IntersectionObserver | undefined;
     if ("IntersectionObserver" in window && !reducedMotion.matches) {
       revealObserver = new IntersectionObserver((entries, observer) => {

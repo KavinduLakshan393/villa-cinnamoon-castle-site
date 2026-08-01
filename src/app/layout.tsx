@@ -5,6 +5,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MobileCta } from "@/components/MobileCta";
 import { MotionController } from "@/components/MotionController";
+import "@fontsource-variable/open-sans/wght.css";
+import "@fontsource-variable/playfair-display/wght.css";
 import "../../public/assets/css/styles.css";
 
 export const metadata: Metadata = {
