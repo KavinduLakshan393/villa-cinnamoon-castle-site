@@ -8,7 +8,9 @@ The site uses React 19, TypeScript, and the Next.js App Router. Core property ro
 
 `src/components/MotionController.tsx` applies the reference site’s low-amplitude transforms only to visible elements marked with `data-parallax`. It respects `prefers-reduced-motion`, never hijacks scrolling, and leaves the document in its normal reading order.
 
-The homepage adds a progressively enhanced cinematic hero, clipped image reveals, an editorial room sequence, and two-depth photographic chapters. Hero autoplay pauses during pointer or keyboard interaction and is disabled for reduced-motion users. Content remains visible when the motion controller does not initialize.
+The homepage opens with a progressively enhanced, scroll-driven arrival sequence. A short sticky stage expands the authentic exterior photograph, moves the headline out of the scene, and reveals the verified capacity chapter below. The sequence uses native reversible scrolling, restrained image scale, clip/frame expansion, and a decorative botanical foreground; it never synthesizes or alters the property itself. Reduced-motion users receive the same content in a static reading order without a pinned gap.
+
+The custom botanical overlay was generated as decorative editorial artwork on a removable chroma-key background, converted to an alpha WebP, and is served only above the tablet breakpoint. It contains no property representation or factual content.
 
 ## Typography
 

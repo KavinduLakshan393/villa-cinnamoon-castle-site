@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CinematicHero, type CinematicHeroSlide } from "@/components/CinematicHero";
 import { InquiryForm } from "@/components/InquiryForm";
 import { ResponsivePicture } from "@/components/ResponsivePicture";
 import { RoomSequence, type RoomSequenceItem } from "@/components/RoomSequence";
+import { ScrollIntro } from "@/components/ScrollIntro";
 import { getImage } from "@/content/media";
 import { pageMetadata } from "@/lib/site-metadata";
 
@@ -16,7 +16,6 @@ export const metadata: Metadata = pageMetadata(
 const hero = getImage("01_hero_exterior_day.jpg");
 const gate = getImage("03_garden_gate_reveal.jpg");
 const balcony = getImage("07_balcony_tropical_view.jpg");
-const living = getImage("09_living_dining_overview.jpg");
 const stairs = getImage("10_staircase_living_flow.jpg");
 const landing = getImage("12_upper_landing_high_resolution.jpg");
 const kitchen = getImage("14_full_kitchen_wide.jpg");
@@ -26,14 +25,6 @@ const bedroom2 = getImage("17_bedroom_2_air_conditioned.jpg");
 const bedroom3 = getImage("18_bedroom_3_wide.jpg");
 const bedroom4 = getImage("19_bedroom_4_four_poster.jpg");
 const bedroom5 = getImage("20_bedroom_5_white_linen.jpg");
-
-const heroSlides: readonly CinematicHeroSlide[] = [
-  { image: hero, kicker: "Arrival", title: "A private villa shaped by tropical greenery.", copy: "A peaceful entire home for families and groups of up to ten, approximately 3.5 km from Hikkaduwa town and main beach areas." },
-  { image: gate, kicker: "Tropical setting", title: "A quieter side of Hikkaduwa.", copy: "The garden approach, mature trees and calm inland setting create a sense of privacy without presenting the villa as beachfront." },
-  { image: living, kicker: "Shared spaces", title: "Room to gather across two levels.", copy: "Living, dining, balcony and upper-floor spaces give a group places to come together and room to settle into its own rhythm." },
-  { image: bedroom1, kicker: "Five bedrooms", title: "A considered stay for up to ten guests.", copy: "The home has five beds, two full bathrooms with hot water, one air-conditioned bedroom and fans in the remaining rooms." },
-  { image: kitchen, kicker: "Everyday comfort", title: "Stay, cook and work with ease.", copy: "A full kitchen, high-speed Wi-Fi, dedicated workspace and washing machine support both short visits and longer stays." }
-];
 
 const rooms: readonly RoomSequenceItem[] = [
   { image: bedroom1, label: "Bedroom 1", description: "Warm timber and natural light" },
@@ -61,7 +52,7 @@ const amenities = [
 export default function HomePage() {
   return (
     <main id="main">
-      <CinematicHero slides={heroSlides} />
+      <ScrollIntro image={hero} />
 
       <div className="facts-wrap" id="facts">
         <div className="container">
