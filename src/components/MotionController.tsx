@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import SplitType from "split-type";
 
 type ParallaxElement = HTMLElement & { dataset: DOMStringMap & { parallax?: string } };
 
@@ -39,6 +40,23 @@ export function MotionController() {
       window.addEventListener("resize", requestParallax, { passive: true });
     }
 
+    const textRevealItems = [...document.querySelectorAll<HTMLElement>('.reveal[data-reveal="text"]')];
+    let splitInstances: SplitType[] = [];
+    if (!reducedMotion.matches && textRevealItems.length) {
+      textRevealItems.forEach((item) => {
+        const split = new SplitType(item, { types: "lines,words" });
+        splitInstances.push(split);
+        if (split.lines) {
+          split.lines.forEach((line, lineIndex) => {
+            const words = line.querySelectorAll(".word");
+            words.forEach((word) => {
+              (word as HTMLElement).style.transitionDelay = `${lineIndex * 120}ms`;
+            });
+          });
+        }
+      });
+    }
+
     const revealItems = [...document.querySelectorAll<HTMLElement>(".reveal")];
     revealItems.forEach((item) => {
       const requestedDelay = Number(item.dataset.revealDelay || 0);
@@ -74,6 +92,7 @@ export function MotionController() {
       window.removeEventListener("resize", requestParallax);
       revealObserver?.disconnect();
       ctaObserver?.disconnect();
+      splitInstances.forEach((split) => split.revert());
     };
   }, [pathname]);
 

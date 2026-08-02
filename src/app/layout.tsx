@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { metadataBase } from "@/lib/site-metadata";
+import { CustomCursor } from "@/components/CustomCursor";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MobileCta } from "@/components/MobileCta";
 import { MotionController } from "@/components/MotionController";
 import "@fontsource-variable/inter/wght.css";
-import "@fontsource-variable/playfair-display/wght.css";
 import "../../public/assets/css/styles.css";
 
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html lang="en" className="js">
       <body>
         <a className="skip-link" href="#main">Skip to content</a>
+        <CustomCursor />
         <SiteHeader />
         {children}
         <SiteFooter />

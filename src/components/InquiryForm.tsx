@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
 import { validateInquiry } from "@/lib/inquiry";
+import { Magnetic } from "@/components/Magnetic";
 
 export function InquiryForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -71,7 +72,7 @@ export function InquiryForm() {
         <div className="honeypot" aria-hidden="true"><label htmlFor="website">Website</label><input id="website" name="website" tabIndex={-1} autoComplete="off" /></div>
         <div className="field field--full"><label className="consent" htmlFor="consentAccepted"><input id="consentAccepted" name="consentAccepted" aria-describedby="consentAccepted-error" type="checkbox" required aria-invalid={invalid("consentAccepted")} /><span>I agree that my details may be used to answer this inquiry. Read the <Link href="/privacy/">privacy notice</Link>.</span></label><span className="field-error" id="consentAccepted-error">{fieldError("consentAccepted")}</span></div>
       </div>
-      <div className="form-actions"><button className="button" type="submit" disabled={submitting}>Send inquiry <span aria-hidden="true">→</span></button><span className="muted">At least one contact method is required.</span></div>
+      <div className="form-actions"><Magnetic><button className="button" type="submit" disabled={submitting}>Send inquiry <span aria-hidden="true">→</span></button></Magnetic><span className="muted">At least one contact method is required.</span></div>
       <div className={`form-status${status.kind ? ` is-${status.kind}` : ""}`} tabIndex={-1} role="status" aria-live="polite">{status.message}</div>
     </form>
   );

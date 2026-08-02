@@ -84,7 +84,7 @@ export default function HomePage() {
 
       <section className="section section--dark room-showcase" id="rooms" aria-labelledby="rooms-title">
         <div className="container">
-          <div className="section-heading reveal">
+          <div className="section-heading reveal" data-reveal="text">
             <div><p className="eyebrow">The stay</p><h2 id="rooms-title">Five bedrooms for up to ten guests.</h2></div>
             <div><p className="lede">The villa has four Super King beds and one Queen bed. One bedroom has air conditioning; the remaining bedrooms use fans.</p><p className="section-link"><Link className="text-link" href="/rooms/">Explore every room <span aria-hidden="true">→</span></Link></p></div>
           </div>
@@ -128,7 +128,7 @@ export default function HomePage() {
 
       <section className="section section--sand">
         <div className="container">
-          <div className="section-heading reveal"><div><p className="eyebrow">Confirmed amenities</p><h2>The details that make a group stay work.</h2></div><p className="lede">Every amenity shown below comes from the supplied property record. No pool, beachfront access or fully air-conditioned claim has been added.</p></div>
+          <div className="section-heading reveal" data-reveal="text"><div><p className="eyebrow">Confirmed amenities</p><h2>The details that make a group stay work.</h2></div><p className="lede">Every amenity shown below comes from the supplied property record. No pool, beachfront access or fully air-conditioned claim has been added.</p></div>
           <div className="amenity-grid reveal">
             {amenities.map(([icon, title, copy]) => <div className="amenity" key={title}><span className="amenity-icon" aria-hidden="true">{icon}</span><strong>{title}</strong><span>{copy}</span></div>)}
           </div>
@@ -146,7 +146,7 @@ export default function HomePage() {
 
       <section className="section section--paper">
         <div className="container">
-          <div className="section-heading reveal"><div><p className="eyebrow">Practical information</p><h2>Clear details before you inquire.</h2></div><p className="lede">Villa Cinnamoon Castle is a new listing with no reviews yet. Trust is built here through authentic photographs and precise disclosures.</p></div>
+          <div className="section-heading reveal" data-reveal="text"><div><p className="eyebrow">Practical information</p><h2>Clear details before you inquire.</h2></div><p className="lede">Villa Cinnamoon Castle is a new listing with no reviews yet. Trust is built here through authentic photographs and precise disclosures.</p></div>
           <div className="practical">
             <details className="disclosure reveal"><summary>Cooling and bedrooms</summary><div className="disclosure-content">One bedroom has air conditioning. The remaining four bedrooms have fans. The total bed inventory is four Super King beds and one Queen bed.</div></details>
             <details className="disclosure reveal"><summary>Safety information</summary><div className="disclosure-content">Exterior security cameras are present. Please contact the host for the latest details about smoke and carbon-monoxide alarms.</div></details>
@@ -171,7 +171,7 @@ export default function HomePage() {
       <section className="section section--dark" id="inquiry">
         <div className="container">
           <div className="inquiry-shell">
-            <div className="inquiry-copy reveal"><p className="eyebrow">Plan your stay</p><h2>Ask about dates, pricing or a longer stay.</h2><p className="lede">Share the basics and the host can reply with current availability and next steps.</p><p className="inquiry-note">Submitting an inquiry does not reserve the villa. Your dates are confirmed only when the host replies.</p></div>
+            <div className="inquiry-copy reveal" data-reveal="text"><p className="eyebrow">Plan your stay</p><h2>Ask about dates, pricing or a longer stay.</h2><p className="lede">Share the basics and the host can reply with current availability and next steps.</p><p className="inquiry-note">Submitting an inquiry does not reserve the villa. Your dates are confirmed only when the host replies.</p></div>
             <div className="reveal"><InquiryForm /></div>
           </div>
         </div>
