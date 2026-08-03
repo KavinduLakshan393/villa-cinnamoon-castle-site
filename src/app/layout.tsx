@@ -6,8 +6,10 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MobileCta } from "@/components/MobileCta";
 import { MotionController } from "@/components/MotionController";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 import "@fontsource-variable/inter/wght.css";
 import "../../public/assets/css/styles.css";
+import "../../public/assets/css/cb-navbar.css";
 
 export const metadata: Metadata = {
   metadataBase,
@@ -15,19 +17,21 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest"
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#173225" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#10110f" };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className="js">
       <body>
-        <a className="skip-link" href="#main">Skip to content</a>
-        <CustomCursor />
-        <SiteHeader />
-        {children}
-        <SiteFooter />
-        <MobileCta />
-        <MotionController />
+        <MotionProvider>
+          <a className="skip-link" href="#main">Skip to content</a>
+          <CustomCursor />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          <MobileCta />
+          <MotionController />
+        </MotionProvider>
       </body>
     </html>
   );
