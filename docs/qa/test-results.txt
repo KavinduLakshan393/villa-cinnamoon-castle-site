@@ -1,0 +1,98 @@
+# Automated verification transcript
+
+$ npm run check
+
+> villa-cinnamoon-castle@1.0.0 check
+> npm run typecheck && npm run lint && npm test
+
+
+> villa-cinnamoon-castle@1.0.0 typecheck
+> node scripts/typecheck.mjs
+
+TypeScript check passed using tsconfig.offline.json.
+
+> villa-cinnamoon-castle@1.0.0 lint
+> node scripts/lint-source.mjs
+
+Source lint passed for 40 TypeScript/TSX files and the global stylesheet.
+
+> villa-cinnamoon-castle@1.0.0 test
+> node --test --test-reporter=spec tests/*.test.mjs
+
+✔ global shell exposes language, main skip link and stable landmarks (0.848837ms)
+✔ generic reveals fail open when observers or motion are unavailable (0.174754ms)
+✔ reduced motion removes pinned scenes and custom cursor (0.322172ms)
+✔ essential controls retain normal cursor and stable positioning (0.240079ms)
+✔ homepage follows the approved narrative order (0.746361ms)
+✔ arrival scene uses authentic priority media and concise copy (0.169334ms)
+✔ room sequence retains all content while progressively enhancing active chapters (0.178666ms)
+✔ header provides focus trapping, Escape handling and section-aware contrast (0.101089ms)
+✔ custom cursor is scoped to explicit media targets (0.28852ms)
+✔ gallery preserves filters, dialog controls and focus restoration (0.09394ms)
+✔ inquiry form retains accessible validation without magnetic controls (0.657208ms)
+✔ design system removes retired and template-like homepage patterns (0.310345ms)
+✔ all local alias imports resolve to source files (5.447179ms)
+✔ inquiry validation accepts a valid submission (0.855266ms)
+✔ inquiry validation enforces the ten-guest capacity (0.382277ms)
+✔ inquiry validation rejects invalid date order (1.841993ms)
+✔ inquiry validation requires at least one contact method (0.277939ms)
+✔ inquiry validation rejects the honeypot field (0.150984ms)
+✔ inquiry normalization trims, lowercases and limits user input (0.10176ms)
+✔ media catalogue preserves all 21 approved photographs (1.171543ms)
+✔ every photograph has valid dimensions, variants and files (1.862089ms)
+✔ shared-space gallery filter retains five photographs (0.201676ms)
+✔ clamp constrains motion progress (0.573226ms)
+✔ smoothRange produces stable eased boundaries (0.185429ms)
+✔ scroll progress is normalized and reversible (0.108264ms)
+✔ room progression selects all five chapters without overflow (1.899734ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 500.707947
+
+$ npm run build:verify
+
+> villa-cinnamoon-castle@1.0.0 build:verify
+> node scripts/build-verification.mjs
+
+TypeScript check passed using tsconfig.offline.json.
+Source lint passed for 40 TypeScript/TSX files and the global stylesheet.
+✔ global shell exposes language, main skip link and stable landmarks (2.316427ms)
+✔ generic reveals fail open when observers or motion are unavailable (0.446421ms)
+✔ reduced motion removes pinned scenes and custom cursor (0.767066ms)
+✔ essential controls retain normal cursor and stable positioning (0.323213ms)
+✔ homepage follows the approved narrative order (1.847992ms)
+✔ arrival scene uses authentic priority media and concise copy (0.468488ms)
+✔ room sequence retains all content while progressively enhancing active chapters (0.432913ms)
+✔ header provides focus trapping, Escape handling and section-aware contrast (0.280683ms)
+✔ custom cursor is scoped to explicit media targets (2.665455ms)
+✔ gallery preserves filters, dialog controls and focus restoration (0.422492ms)
+✔ inquiry form retains accessible validation without magnetic controls (0.336836ms)
+✔ design system removes retired and template-like homepage patterns (2.11987ms)
+✔ all local alias imports resolve to source files (12.31501ms)
+✔ inquiry validation accepts a valid submission (0.913224ms)
+✔ inquiry validation enforces the ten-guest capacity (0.33169ms)
+✔ inquiry validation rejects invalid date order (2.898023ms)
+✔ inquiry validation requires at least one contact method (0.233694ms)
+✔ inquiry validation rejects the honeypot field (0.115159ms)
+✔ inquiry normalization trims, lowercases and limits user input (0.098737ms)
+✔ media catalogue preserves all 21 approved photographs (1.279214ms)
+✔ every photograph has valid dimensions, variants and files (2.315687ms)
+✔ shared-space gallery filter retains five photographs (0.199044ms)
+✔ clamp constrains motion progress (0.72162ms)
+✔ smoothRange produces stable eased boundaries (0.249483ms)
+✔ scroll progress is normalized and reversible (0.11352ms)
+✔ room progression selects all five chapters without overflow (0.767531ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 795.859531
+Verification build passed and dist/verification-manifest.json was generated.
