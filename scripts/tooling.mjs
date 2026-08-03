@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-export const root = path.resolve(new URL("..", import.meta.url).pathname);
+export const root = fileURLToPath(new URL("..", import.meta.url));
 
 export function findTypeScriptRoot() {
   const candidates = [

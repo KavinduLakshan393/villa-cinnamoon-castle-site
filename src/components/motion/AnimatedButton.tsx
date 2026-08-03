@@ -16,7 +16,7 @@ function extractText(node: ReactNode): string {
   if (typeof node === "number") return String(node);
   if (Array.isArray(node)) return node.map(extractText).join("");
   if (node && typeof node === "object" && "props" in node && node.props) {
-    return extractText(node.props.children);
+    return extractText((node.props as any).children);
   }
   return "";
 }
