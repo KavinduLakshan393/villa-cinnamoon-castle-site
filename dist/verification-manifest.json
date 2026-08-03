@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-08-02T17:27:07.564Z",
+  "files": [
+    {
+      "file": "src/app/page.tsx",
+      "bytes": 7488,
+      "sha256": "57cf59965ce218d28d600be48dff1b4389aab263368bd721c6cd0c37a53ab1d1"
+    },
+    {
+      "file": "src/components/arrival/ArrivalScene.tsx",
+      "bytes": 3180,
+      "sha256": "a0f159e6046ffabba510dd0711d3a1639e6403789871f97168ed412dfa3bdd1b"
+    },
+    {
+      "file": "src/components/rooms/RoomSequence.tsx",
+      "bytes": 2507,
+      "sha256": "cd0c6862ca340788b8d5824bd45b86a05564b3d853434c41fd61fcbc17f57a6d"
+    },
+    {
+      "file": "src/components/SiteHeader.tsx",
+      "bytes": 4979,
+      "sha256": "5f98eb30636963842a5fc44eb155597af8775bdf3f0e664d9a9013bf1046f1b8"
+    },
+    {
+      "file": "public/assets/css/styles.css",
+      "bytes": 73390,
+      "sha256": "793e2d59a3baceaa7423346024a314b83b4e0d9d0f8d9447f5749d9b86ebcb3d"
+    },
+    {
+      "file": "public/assets/images/manifest.json",
+      "bytes": 16268,
+      "sha256": "b1f5a1aec9485b4cfd7a2c72c776135f8c5cb7dc838012c44e964b22eebbd169"
+    }
+  ]
+}

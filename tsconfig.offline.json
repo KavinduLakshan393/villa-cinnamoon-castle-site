@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "plugins": [],
+    "incremental": false,
+    "types": []
+  },
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".qa/offline-types/vendor-stubs.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/tests",
+    "tests",
+    "scripts"
+  ]
+}

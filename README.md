@@ -1,104 +1,96 @@
 # Villa Cinnamoon Castle Website
 
-A complete, dependency-free flagship accommodation website built from the supplied Villa Cinnamoon Castle property facts, implementation plan, and 21 selected photographs.
+A photography-led Next.js website for Villa Cinnamoon Castle in Hikkaduwa. The homepage implements the approved Lusion-inspired direction through restrained editorial composition, native scroll storytelling, scene-specific motion, and truthful property photography.
 
-## What is included
+## Experience highlights
 
-- Nine public routes: home, villa, rooms, gallery, location, contact, privacy, terms, and accessibility.
-- Responsive editorial layouts designed for the portrait-heavy image archive.
-- Responsive WebP derivatives plus untouched supplied originals.
-- Lightweight 2.5D/parallax enhancement with a full reduced-motion fallback.
-- Accessible gallery filters and a keyboard/swipe lightbox.
-- Inquiry form with browser and server validation.
-- Native Node server with no third-party runtime dependencies.
-- Local inquiry persistence, rate limiting, a honeypot, security headers, and optional webhook forwarding.
-- SEO metadata, social preview image, sitemap, robots file, and web manifest.
-- Automated inquiry validation tests.
+- Layered arrival scene built from the authentic exterior photograph and a decorative botanical foreground.
+- Editorial property-fact rail with the four primary verified facts.
+- Architecture chapter using the garden-gate and balcony photographs.
+- Guided five-bedroom sequence on desktop and native horizontal scroll-snap on compact screens.
+- Shared-spaces transition expressing the villa's two levels.
+- Numbered amenities inventory instead of icon cards.
+- Approximate location presentation with an explicit accuracy disclaimer.
+- Evening transition that resolves into a stable, motion-free inquiry experience.
+- Section-aware header, accessible full-screen menu, editorial gallery, and scoped media cursor.
+
+## Technical foundation
+
+- Next.js App Router
+- React and TypeScript
+- Server-rendered, indexable property content
+- Existing inquiry API, validation, persistence, and optional webhook forwarding
+- Responsive `<picture>` delivery for all 21 approved property photographs
+- Three motion tiers: `full`, `light`, and `static`
+- Native scrolling with no scroll hijacking
+- Reduced-motion, keyboard, touch, and JavaScript-failure fallbacks
 
 ## Requirements
 
-- Node.js 20 or newer.
+- Node.js 20 or newer
+- A normal npm registry connection for dependency installation
 
-## Run locally
+## Local development
 
 ```bash
-npm start
+npm ci
+npm run dev
 ```
 
 Open `http://127.0.0.1:4173`.
 
-For automatic restarts while editing:
+## Verification
 
-```bash
-npm run dev
-```
-
-## Validate
+Run the dependency-independent source and behavior suite:
 
 ```bash
 npm run check
-npm test
+npm run build:verify
 ```
+
+Run the framework production build after dependencies are installed:
+
+```bash
+npm run build
+```
+
+The included suite contains 26 tests covering inquiry validation, media integrity, motion calculations, narrative order, reduced-motion behavior, navigation accessibility, gallery contracts, and scoped cursor behavior.
+
+## Production
+
+```bash
+npm ci
+npm run build
+npm start
+```
+
+Set `NEXT_PUBLIC_SITE_URL` to the public origin before building production metadata.
 
 ## Inquiry delivery
 
-Successful inquiries are written to:
-
-```text
-data/inquiries.ndjson
-```
-
-That file is excluded from Git and created with restrictive file permissions. To forward each valid inquiry to an approved automation, CRM, email gateway, or serverless workflow, set:
-
-```bash
-INQUIRY_WEBHOOK_URL=https://your-approved-endpoint.example/inquiries npm start
-```
-
-The webhook receives the normalized inquiry record as JSON. The website never claims a booking is confirmed.
-
-## Production checklist
-
-Before launch, the owner should:
-
-1. Replace the reserved `.example` canonical domain in HTML, `robots.txt`, and `sitemap.xml`.
-2. Confirm public contact details or keep the site form-only.
-3. Configure the inquiry webhook and test host delivery.
-4. Approve rates, policies, check-in/out times, map precision, and safety information.
-5. Confirm publication rights for all supplied photographs.
-6. Obtain legal review for the privacy notice and terms.
-7. Test the deployed site with keyboard, screen reader, reduced motion, slow network, and real mobile devices.
+Successful inquiries are stored in `data/inquiries.ndjson`, which is excluded from version control. Set `INQUIRY_WEBHOOK_URL` to forward each normalized record to an approved workflow. Inquiry responses never claim that a booking is confirmed.
 
 ## Project structure
 
 ```text
-villa-cinnamoon-castle/
-├── public/
-│   ├── index.html
-│   ├── the-villa/
-│   ├── rooms/
-│   ├── gallery/
-│   ├── location/
-│   ├── contact/
-│   ├── privacy/
-│   ├── terms/
-│   ├── accessibility/
-│   ├── assets/
-│   │   ├── css/styles.css
-│   │   ├── js/
-│   │   └── images/
-│   ├── favicon.svg
-│   ├── site.webmanifest
-│   ├── robots.txt
-│   └── sitemap.xml
-├── lib/inquiry.mjs
-├── server.mjs
-├── tests/inquiry.test.mjs
-├── docs/
-├── data/.gitkeep
-├── .env.example
-└── package.json
+src/
+├── app/                    # Public routes, homepage composition, and API handlers
+├── components/
+│   ├── arrival/            # Layered arrival scene
+│   ├── motion/             # Motion provider and reveal enhancement
+│   ├── rooms/              # Desktop/mobile room sequence
+│   └── ...                 # Editorial chapters and shared UI
+├── content/                # Typed property and media records
+├── hooks/                  # Scroll, pointer, visibility, and motion-tier hooks
+└── lib/                    # Motion math, metadata, and inquiry rules
+public/
+├── assets/css/             # Design system and responsive presentation
+└── assets/images/          # Originals, optimized variants, and decorative artwork
+tests/                      # Node-based verification suite
+scripts/                    # Offline type, lint, verification, and QA-preview tools
+docs/                       # Implementation, motion, traceability, and QA records
 ```
 
-## Accuracy notes
+## Accuracy guardrails
 
-The site deliberately does not claim that the property is beachfront, fully air-conditioned, equipped with a pool, highly rated, instantly bookable, or confirmed to have smoke and carbon-monoxide alarms. It also does not invent public phone numbers, email addresses, rates, exact coordinates, journey times, policies, or reviews.
+The site does not claim that the property is beachfront, fully air-conditioned, equipped with a pool, highly rated, instantly bookable, or confirmed to have smoke and carbon-monoxide alarms. Public contact details, rates, exact coordinates, journey times, detailed policies, and reviews remain omitted until approved.

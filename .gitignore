@@ -1,3 +1,10 @@
 .env
+.env.local
+.next/
+node_modules/
+coverage/
+*.tsbuildinfo
 data/inquiries.ndjson
+.qa/preview/
+public/qa-preview/
 .DS_Store
