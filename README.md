@@ -1,27 +1,39 @@
 # Villa Cinnamoon Castle Website
 
-A server-rendered React application for Villa Cinnamoon Castle, rebuilt from the approved static reference while preserving its photography, content, responsive layouts, accessibility behavior, and lightweight 2.5D parallax experience.
+A photography-led Next.js website for Villa Cinnamoon Castle in Hikkaduwa. The homepage implements the approved Lusion-inspired direction through restrained editorial composition, native scroll storytelling, scene-specific motion, and truthful property photography.
 
-## Included
+## Experience highlights
 
-- Nine public routes rendered through the Next.js App Router.
-- TypeScript content, components, API contracts, and validation.
-- The original responsive CSS design system and all 21 authentic photographs.
-- Request-animation-frame parallax with native scrolling and reduced-motion fallbacks.
-- Accessible gallery filtering, modal lightbox, keyboard controls, and swipe navigation.
-- Inquiry form with client and server validation.
-- Server-side inquiry persistence, rate limiting, honeypot protection, and optional webhook forwarding.
-- Per-route metadata, canonical URLs, social preview image, sitemap, robots file, and web manifest.
-- Vitest and Testing Library coverage for inquiry and gallery behavior.
+- Layered arrival scene built from the authentic exterior photograph and a decorative botanical foreground.
+- Editorial property-fact rail with the four primary verified facts.
+- Architecture chapter using the garden-gate and balcony photographs.
+- Guided five-bedroom sequence on desktop and native horizontal scroll-snap on compact screens.
+- Shared-spaces transition expressing the villa's two levels.
+- Numbered amenities inventory instead of icon cards.
+- Approximate location presentation with an explicit accuracy disclaimer.
+- Evening transition that resolves into a stable, motion-free inquiry experience.
+- Section-aware header, accessible full-screen menu, editorial gallery, and scoped media cursor.
+
+## Technical foundation
+
+- Next.js App Router
+- React and TypeScript
+- Server-rendered, indexable property content
+- Existing inquiry API, validation, persistence, and optional webhook forwarding
+- Responsive `<picture>` delivery for all 21 approved property photographs
+- Three motion tiers: `full`, `light`, and `static`
+- Native scrolling with no scroll hijacking
+- Reduced-motion, keyboard, touch, and JavaScript-failure fallbacks
 
 ## Requirements
 
-- Node.js 20 or newer.
+- Node.js 20 or newer
+- A normal npm registry connection for dependency installation
 
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -29,14 +41,25 @@ Open `http://127.0.0.1:4173`.
 
 ## Verification
 
+Run the dependency-independent source and behavior suite:
+
 ```bash
 npm run check
+npm run build:verify
+```
+
+Run the framework production build after dependencies are installed:
+
+```bash
 npm run build
 ```
+
+The included suite contains 26 tests covering inquiry validation, media integrity, motion calculations, narrative order, reduced-motion behavior, navigation accessibility, gallery contracts, and scoped cursor behavior.
 
 ## Production
 
 ```bash
+npm ci
 npm run build
 npm start
 ```
@@ -45,26 +68,29 @@ Set `NEXT_PUBLIC_SITE_URL` to the public origin before building production metad
 
 ## Inquiry delivery
 
-Successful inquiries are stored in `data/inquiries.ndjson`, which is excluded from Git. Set `INQUIRY_WEBHOOK_URL` to forward each normalized record to an approved workflow. Inquiry responses never claim that a booking is confirmed.
+Successful inquiries are stored in `data/inquiries.ndjson`, which is excluded from version control. Set `INQUIRY_WEBHOOK_URL` to forward each normalized record to an approved workflow. Inquiry responses never claim that a booking is confirmed.
 
-## Structure
+## Project structure
 
 ```text
 src/
-├── app/            # Public routes and server API handlers
-├── components/     # Shared layout and interactive React components
-├── content/        # Typed property-media records
-├── lib/            # Metadata and inquiry domain rules
-└── tests/          # Unit and component tests
+├── app/                    # Public routes, homepage composition, and API handlers
+├── components/
+│   ├── arrival/            # Layered arrival scene
+│   ├── motion/             # Motion provider and reveal enhancement
+│   ├── rooms/              # Desktop/mobile room sequence
+│   └── ...                 # Editorial chapters and shared UI
+├── content/                # Typed property and media records
+├── hooks/                  # Scroll, pointer, visibility, and motion-tier hooks
+└── lib/                    # Motion math, metadata, and inquiry rules
 public/
-├── assets/css/     # Preserved reference design system
-├── assets/images/  # Originals and responsive WebP derivatives
-├── favicon.svg
-├── robots.txt
-├── site.webmanifest
-└── sitemap.xml
+├── assets/css/             # Design system and responsive presentation
+└── assets/images/          # Originals, optimized variants, and decorative artwork
+tests/                      # Node-based verification suite
+scripts/                    # Offline type, lint, verification, and QA-preview tools
+docs/                       # Implementation, motion, traceability, and QA records
 ```
 
 ## Accuracy guardrails
 
-The application does not claim that the property is beachfront, fully air-conditioned, equipped with a pool, highly rated, instantly bookable, or confirmed to have smoke and carbon-monoxide alarms. Public phone numbers, email addresses, rates, exact coordinates, journey times, policies, and reviews remain omitted until approved.
+The site does not claim that the property is beachfront, fully air-conditioned, equipped with a pool, highly rated, instantly bookable, or confirmed to have smoke and carbon-monoxide alarms. Public contact details, rates, exact coordinates, journey times, detailed policies, and reviews remain omitted until approved.
