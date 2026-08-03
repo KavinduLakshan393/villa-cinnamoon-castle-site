@@ -2,69 +2,18 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import SplitType from "split-type";
-
-type ParallaxElement = HTMLElement & { dataset: DOMStringMap & { parallax?: string } };
+import { useMotion } from "@/components/motion/MotionProvider";
 
 export function MotionController() {
   const pathname = usePathname();
+  const { tier } = useMotion();
 
   useEffect(() => {
     document.documentElement.classList.add("motion-ready");
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const parallaxItems = [...document.querySelectorAll<ParallaxElement>("[data-parallax]")];
-    let frame = 0;
-
-    const renderParallax = () => {
-      frame = 0;
-      if (reducedMotion.matches) return;
-      const viewport = window.innerHeight;
-      parallaxItems.forEach((item) => {
-        const rect = item.getBoundingClientRect();
-        if (rect.bottom < -150 || rect.top > viewport + 150) return;
-        const strength = Number(item.dataset.parallax || 18);
-        const centerOffset = (rect.top + rect.height / 2 - viewport / 2) / viewport;
-        const y = Math.max(-strength, Math.min(strength, -centerOffset * strength));
-        const progress = Math.max(0, Math.min(1, (viewport - rect.top) / (viewport + rect.height)));
-        item.style.setProperty("--parallax-y", `${y.toFixed(2)}px`);
-        item.style.setProperty("--parallax-progress", progress.toFixed(3));
-      });
-    };
-    const requestParallax = () => {
-      if (!frame) frame = window.requestAnimationFrame(renderParallax);
-    };
-
-    if (parallaxItems.length && !reducedMotion.matches) {
-      renderParallax();
-      window.addEventListener("scroll", requestParallax, { passive: true });
-      window.addEventListener("resize", requestParallax, { passive: true });
-    }
-
-    const textRevealItems = [...document.querySelectorAll<HTMLElement>('.reveal[data-reveal="text"]')];
-    let splitInstances: SplitType[] = [];
-    if (!reducedMotion.matches && textRevealItems.length) {
-      textRevealItems.forEach((item) => {
-        const split = new SplitType(item, { types: "lines,words" });
-        splitInstances.push(split);
-        if (split.lines) {
-          split.lines.forEach((line, lineIndex) => {
-            const words = line.querySelectorAll(".word");
-            words.forEach((word) => {
-              (word as HTMLElement).style.transitionDelay = `${lineIndex * 120}ms`;
-            });
-          });
-        }
-      });
-    }
-
     const revealItems = [...document.querySelectorAll<HTMLElement>(".reveal")];
-    revealItems.forEach((item) => {
-      const requestedDelay = Number(item.dataset.revealDelay || 0);
-      const delay = Math.max(0, Math.min(480, Number.isFinite(requestedDelay) ? requestedDelay : 0));
-      item.style.setProperty("--reveal-delay", `${delay}ms`);
-    });
     let revealObserver: IntersectionObserver | undefined;
-    if ("IntersectionObserver" in window && !reducedMotion.matches) {
+
+    if (tier !== "static" && "IntersectionObserver" in window) {
       revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -87,14 +36,10 @@ export function MotionController() {
     }
 
     return () => {
-      if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", requestParallax);
-      window.removeEventListener("resize", requestParallax);
       revealObserver?.disconnect();
       ctaObserver?.disconnect();
-      splitInstances.forEach((split) => split.revert());
     };
-  }, [pathname]);
+  }, [pathname, tier]);
 
   return null;
 }
