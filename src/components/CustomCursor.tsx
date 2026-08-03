@@ -2,61 +2,74 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { useMotion } from "@/components/motion/MotionProvider";
+
+const labels: Record<string, string> = { view: "View", drag: "Drag", explore: "Explore" };
 
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const { tier, finePointer, documentVisible } = useMotion();
 
   useEffect(() => {
-    // Disable on touch devices
-    if (window.matchMedia("(hover: none)").matches) return;
-
     const cursor = cursorRef.current;
-    if (!cursor) return;
+    if (!cursor || tier !== "full" || !finePointer || !documentVisible) return;
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let cursorX = mouseX;
-    let cursorY = mouseY;
-    let isHovering = false;
-    let animationFrameId: number;
-
-    const onMouseMove = (e: MouseEvent) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      
-      // Check if hovering over interactive elements
-      const target = e.target as HTMLElement;
-      if (
-        target.closest("a") || 
-        target.closest("button") || 
-        target.closest(".image-frame") ||
-        target.closest("[data-magnetic]")
-      ) {
-        isHovering = true;
-      } else {
-        isHovering = false;
-      }
-    };
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let frame = 0;
+    let activeTarget: HTMLElement | null = null;
 
     const render = () => {
-      // Linear interpolation (lerp) for smooth following
-      cursorX += (mouseX - cursorX) * 0.2;
-      cursorY += (mouseY - cursorY) * 0.2;
-
-      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) scale(${isHovering ? 2.5 : 1})`;
-
-      animationFrameId = requestAnimationFrame(render);
+      currentX += (targetX - currentX) * 0.22;
+      currentY += (targetY - currentY) * 0.22;
+      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      const unsettled = activeTarget && (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1);
+      frame = unsettled ? window.requestAnimationFrame(render) : 0;
     };
 
-    window.addEventListener("mousemove", onMouseMove);
-    animationFrameId = requestAnimationFrame(render);
+    const requestRender = () => {
+      if (!frame) frame = window.requestAnimationFrame(render);
+    };
 
+    const move = (event: PointerEvent) => {
+      targetX = event.clientX;
+      targetY = event.clientY;
+      const target = (event.target as HTMLElement | null)?.closest<HTMLElement>("[data-cursor]") ?? null;
+      if (target !== activeTarget) {
+        activeTarget?.removeAttribute("data-cursor-active");
+        activeTarget = target;
+        if (activeTarget) {
+          activeTarget.setAttribute("data-cursor-active", "true");
+          cursor.dataset.label = labels[activeTarget.dataset.cursor ?? ""] ?? "View";
+          cursor.classList.add("is-active");
+        } else {
+          cursor.classList.remove("is-active");
+        }
+      }
+      if (activeTarget) requestRender();
+    };
+
+    const deactivate = () => {
+      activeTarget?.removeAttribute("data-cursor-active");
+      activeTarget = null;
+      cursor.classList.remove("is-active");
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+    };
+
+    window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("blur", deactivate);
+    document.documentElement.addEventListener("mouseleave", deactivate);
     return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      cancelAnimationFrame(animationFrameId);
+      deactivate();
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("blur", deactivate);
+      document.documentElement.removeEventListener("mouseleave", deactivate);
     };
-  }, [pathname]);
+  }, [documentVisible, finePointer, pathname, tier]);
 
   return <div className="custom-cursor" ref={cursorRef} aria-hidden="true" />;
 }
